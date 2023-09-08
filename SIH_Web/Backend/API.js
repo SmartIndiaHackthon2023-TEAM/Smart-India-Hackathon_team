@@ -18,7 +18,7 @@ const adminSchema = mongoose.Schema({
 
 const Admin = mongoose.model("Admin", adminSchema);
 
-mongoose.connect("mongodb+srv://ShashwatPS:s@cluster0.1alkv6j.mongodb.net/SIH", {
+mongoose.connect("mongodb+srv://ShashwatPS:s@cluster0.1alkv6j.mongodb.net/News", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
