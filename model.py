@@ -198,6 +198,6 @@ def main(url):
 
     return status
 
-urls = ['https://www.google.com/','en.wikipedia.org/wiki/North_Dakota']
+urls = ['https://www.youtube.com/','en.wikipedia.org/wiki/North_Dakota']
 for url in urls:
      print(get_prediction_from_url(url))
