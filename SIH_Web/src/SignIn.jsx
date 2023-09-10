@@ -57,7 +57,9 @@ function SignIn(){
                             alt="Website Logo"
                         />
                     </Grid>
-                    <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+                    <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square sx={{
+                        backgroundColor: 'black',
+                    }}>
                         <Box
                             sx={{
                                 display: 'flex',
@@ -67,10 +69,10 @@ function SignIn(){
                                 height: '100vh',
                             }}
                         >
-                            <Avatar sx={{ m: 1, bgcolor: 'black' , width : 60 , height : 60}}>
+                            <Avatar sx={{ m: 1, bgcolor: 'black' , width : 60 , height : 60, border: '3px solid white'}}>
                                 _Team
                             </Avatar>
-                            <Typography component="h1" variant="h5" style={{color : "#292929"}}>
+                            <Typography component="h1" variant="h5" style={{color : "white"}}>
                                 Welcome Back
                             </Typography>
                             <Box component="form" noValidate sx={{ mt: 1 }}>
@@ -84,6 +86,13 @@ function SignIn(){
                                     onChange={(e)=>{
                                         setEmail(e.target.value);
                                     }}
+                                    InputLabelProps={{
+                                        style: { color: 'white' }
+                                    }}
+                                    InputProps={{
+                                        style: { color: 'white' },
+                                    }}
+
                                 />
                                 <TextField
                                     margin="normal"
@@ -94,6 +103,12 @@ function SignIn(){
                                     autoComplete="current-password"
                                     onChange={(e)=>{
                                         setPassword(e.target.value);
+                                    }}
+                                    InputLabelProps={{
+                                        style: { color: 'white' }
+                                    }}
+                                    InputProps={{
+                                        style: { color: 'white' },
                                     }}
                                 />
                                 <Button
@@ -127,15 +142,18 @@ function SignIn(){
                                     }}>
                                         <div
                                             style={{
+                                                color: 'white',
                                                 paddingLeft: 50,
                                                 paddingTop: 15,
                                                 cursor: 'pointer',
+                                                fontSize: '18px',
+
                                             }}
                                             onClick={() => {
                                                 window.location.href = "./signup";
                                             }}
                                         >
-                                            Don't have an account? Sign Up
+                                            Don't have an account ? Sign Up
                                         </div>
                                     </Grid>
                                 </Grid>
