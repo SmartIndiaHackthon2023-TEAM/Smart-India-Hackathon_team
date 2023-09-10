@@ -11,16 +11,16 @@ export default function Developers_Contributors() {
   return (
     <List sx={{ width: '100%', maxWidth: 1100, bgcolor: '#060606' }}>
       <ListItem alignItems="flex-start" style={{borderBottom : "1px solid #606060"}}>
-        <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="src\assets\Avatar.png" style={{width : "60px" , height : "60px" , paddingRight : "15px"}}/>
-        </ListItemAvatar>
+          <Avatar alt="Remy Sharp" src="src\assets\Shashwat.jpg" style={{ width: "60px", height: "60px" }}>
+              <img src="src\assets\Shashwat.jpg" alt="Shashwat" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          </Avatar>
         <ListItemText style={{color : "#fafafa"}}
           primary={
             <Typography 
                 component="span" 
                 variant="body2" 
                 color="#005AB5"
-                style={{ fontSize: '25px' , paddingBottom : "300px"}}  // Adjust font size here
+                style={{ fontSize: '25px' , paddingBottom : "300px", paddingLeft: 17}}  // Adjust font size here
             >
                 Shashwat Singh
             </Typography>

@@ -12,7 +12,9 @@ export default function DataScientists_Contributors() {
     <List sx={{ width: '100%', maxWidth: 1100, bgcolor: '#060606' }}>
       <ListItem alignItems="flex-start" style={{borderBottom : "1px solid #606060"}}>
         <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="src\assets\Avatar.png" style={{width : "60px" , height : "60px" , paddingRight : "15px"}}/>
+            <Avatar alt="Remy Sharp" src="src\assets\Snehal.jpg" style={{ width: "60px", height: "60px" }}>
+                <img src="src\assets\Snehal.jpg" alt="Snehal" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </Avatar>
         </ListItemAvatar>
         <ListItemText style={{color : "#fafafa"}}
           primary={
@@ -20,7 +22,7 @@ export default function DataScientists_Contributors() {
                 component="span" 
                 variant="body2" 
                 color="#D0C900"
-                style={{ fontSize: '25px' , paddingBottom : "300px"}}  // Adjust font size here
+                style={{ fontSize: '25px' , paddingBottom : "300px", paddingLeft: 17}}  // Adjust font size here
             >
                 Snehal Saurabh
             </Typography>
