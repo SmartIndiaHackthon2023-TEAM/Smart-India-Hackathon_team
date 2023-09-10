@@ -17,8 +17,8 @@ function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
             {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
+            <Link color="inherit" href="/" style={{ textDecoration : "none"}}>
+                _Team
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -44,10 +44,10 @@ export default function Signup() {
                         alignItems: 'center',
                     }}
                 >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
+                    <Avatar sx={{ m: 1, bgcolor: 'black' , width : 60 , height : 60}}>
+                        _Team
                     </Avatar>
-                    <Typography component="h1" variant="h5">
+                    <Typography component="h1" variant="h5" color= "#292929">
                         Welcome
                     </Typography>
                     <Box component="form" noValidate sx={{ mt: 1 }}>

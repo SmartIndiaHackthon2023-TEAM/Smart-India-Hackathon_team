@@ -17,8 +17,8 @@ function Copyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
             {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
+            <Link color="inherit" href="/" style={{ textDecoration : "none"}}>
+                _Team
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -44,10 +44,10 @@ export default function SignIn() {
                         alignItems: 'center',
                     }}
                 >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
+                    <Avatar sx={{ m: 1, bgcolor: 'black' , width : 60 , height : 60}}>
+                        _Team
                     </Avatar>
-                    <Typography component="h1" variant="h5">
+                    <Typography component="h1" variant="h5" style={{color : "#292929"}}>
                         Welcome Back
                     </Typography>
                     <Box component="form" noValidate sx={{ mt: 1 }}>
@@ -79,24 +79,26 @@ export default function SignIn() {
                             sx={{ mt: 3, mb: 2 }}
                             onClick={ async () => {
                                 try {
-                                    const res = await axios.post("http://localhost:3000/login",{},{
+                                    let sendData = {
+                                        username : email,
+                                        password : password
+                                    }
+                                    const res = await axios.post("http://localhost:3000/login",sendData,{
                                         headers: {
                                             "Content-Type": "application/json",
-                                            "username": email,
-                                            "password": password
                                         },
                                     });
                                     const data = res.data;
                                     localStorage.setItem("token", data.token);
                                     window.location = "/";
                                 } catch (error) {
-                                    console.error("Error:", error);
+                                    console.error();
                                 }
                             }}
                         >
                             Sign In
                         </Button>
-                        <Grid container>
+                        <Grid container> 
                             <Grid item style={{
                                 paddingLeft: "95px",
                             }}>

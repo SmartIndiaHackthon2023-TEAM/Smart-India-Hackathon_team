@@ -8,7 +8,7 @@ const app = express();
 import { z } from "zod";
 
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({origin : '*'}));
 
 
 const adminSchema = mongoose.Schema({
@@ -18,7 +18,7 @@ const adminSchema = mongoose.Schema({
 
 const Admin = mongoose.model("Admin", adminSchema);
 
-mongoose.connect("mongodb+srv://ShashwatPS:s@cluster0.1alkv6j.mongodb.net/SIH", {
+mongoose.connect("mongodb+srv://vibgitcode27:Subzero@cluster0.eiyaeoh.mongodb.net/SIH", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -59,7 +59,7 @@ app.get("/me", authenticatejwt, (req,res)=>{
 })
 
 app.post("/login", async(req,res)=>{
-    const {username, password} = req.headers;
+    const {username, password} = req.body;
     const admin = await Admin.findOne({username,password});
     if(admin){
         const token = jwt.sign({username, role: 'admin'},SECRET, {expiresIn: '1h'});
@@ -69,4 +69,4 @@ app.post("/login", async(req,res)=>{
     }
 })
 
-app.listen(3000);
+app.listen(3000 , () => {console.log("Server is running at port 3000")});
