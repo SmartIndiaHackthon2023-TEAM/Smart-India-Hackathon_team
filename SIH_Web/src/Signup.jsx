@@ -3,7 +3,6 @@ import {
     Avatar,
     Box,
     createTheme,
-    CssBaseline,
     Grid,
     Link,
     Paper,
@@ -35,19 +34,29 @@ function SignIn(){
         <div>
             <ThemeProvider theme={defaultTheme}>
                 <Grid container component="main" sx={{ height: '100vh' }}>
-                    <CssBaseline />
                     <Grid
                         item
                         xs={false}
                         sm={4}
                         md={7}
                         sx={{
-                            backgroundImage: 'url(https://about.coursera.org/static/whiteCoursera-23ec484f7091914430ce19b07d09aedf.svg)',
+                            backgroundColor: 'black',
                             backgroundRepeat: 'no-repeat',
                             backgroundSize: 'cover',
                             backgroundPosition: 'center',
                         }}
-                    />
+                    >
+                        <img
+                            src="src\assets\pngegg (1).png"
+                            style={{
+                                objectFit: 'contain',
+                                width: 600,
+                                height: 700,
+                                marginLeft: 70,
+                            }}
+                            alt="Website Logo"
+                        />
+                    </Grid>
                     <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
                         <Box
                             sx={{
