@@ -68,9 +68,12 @@ if(username)
   return (
     <Box sx={{ 
         flexGrow: 1 ,
-        bgcolor : 'black'
+        bgcolor : 'black',
         }}>
-      <AppBar position="fixed" sx={{bgcolor : '#000000'}}>
+      <AppBar position="fixed" sx={{
+          bgcolor : '#000000',
+          borderBottom: '1px solid white'
+      }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -105,9 +108,10 @@ if(username)
     return (
       <Box sx={{ 
           flexGrow: 1 ,
-          bgcolor : 'black'
+          bgcolor : 'black',
           }}>
-        <AppBar position="fixed" sx={{bgcolor : '#000000'}}>
+        <AppBar position="fixed" sx={{bgcolor : '#000000',
+            borderBottom: '1px solid white',}}>
           <Toolbar>
             <IconButton
               size="large"
