@@ -14,7 +14,6 @@ export function LandingPage(){
 
     return(
         <div>
-            <ButtonAppBar></ButtonAppBar>
         <div style={{
             backgroundColor : "#060606" ,
             height : "92vh" ,

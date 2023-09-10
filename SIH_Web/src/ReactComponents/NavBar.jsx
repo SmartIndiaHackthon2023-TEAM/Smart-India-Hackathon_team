@@ -33,23 +33,16 @@ export default function ButtonAppBar() {
   //   getApiData()
   // })
 
-useEffect(() =>
-    {
-        let insiderUse = async () => 
-        {
-                let response = await fetch("http://localhost:3000/me" , {
-                    method : "GET" ,
-                    headers : {
-                    "Authorization" : "Bearer " + localStorage.getItem("token") ,
-                    }
-                })
-                let data = await response.json();
-                if(data)
-                {
-                    setUsername(data.username);
-                } 
-        }
-        insiderUse()
+    useEffect(()=>{
+        axios.get("http://localhost:3000/me",{
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem("token")}`,
+            }
+        }).then(response=>{
+            setUsername(response.data.username);
+        }).catch(error=>{
+            console.error("Error fetching data:", error);
+        })
     },[])
 
   // let getApiData = async () => 
@@ -126,14 +119,6 @@ if(username)
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}><Button style={{color : "inherit" , fontSize : "18px"}} onClick={() => {window.location = "/"}}>_Team</Button></Typography>
-            <Button color="inherit" sx={{marginRight : 3}} onClick={() =>
-          {
-              window.location = "./url"   
-          }}>Check_URL</Button>
-            <Button color="inherit" sx={{marginRight : 55}} onClick={() =>
-          {
-              window.location = "./email"
-          }}>Check_Email</Button>
             <Button color="inherit" sx={{marginRight : 3}} onClick={() => { window.location = "/signin"}}>Login</Button>
             <Button color="inherit" variant="contained" sx={{bgcolor : "#fafafa" , color : "#171717"}} onClick={() => { window.location = "/signup"}}>SignUp</Button>
           </Toolbar>

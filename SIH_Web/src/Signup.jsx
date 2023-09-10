@@ -38,7 +38,8 @@ export default function Signup() {
                 <CssBaseline />
                 <Box
                     sx={{
-                        marginTop: 8,
+                        paddingTop: 29,
+                        marginTop: 0,
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
@@ -104,8 +105,10 @@ export default function Signup() {
                             <Grid item style={{
                                 paddingLeft: "95px",
                             }}>
-                                <Link href="#" variant="body2">
-                                    {"Don't have an account? Sign Up"}
+                                <Link href="#" variant="body2" onClick={ ()=>{
+                                    window.location="/signin";
+                                }}>
+                                    {"Already have an account? Sign In"}
                                 </Link>
                             </Grid>
                         </Grid>

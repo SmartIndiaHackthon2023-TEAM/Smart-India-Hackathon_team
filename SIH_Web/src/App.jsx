@@ -5,10 +5,12 @@ import SignIn from "./SignIn.jsx";
 import {CheckUrl} from "./CheckUrl.jsx";
 import {LandingPage} from "./LandingPage.jsx";
 import {CheckEmail} from "./CheckEmail.jsx";
+import ButtonAppBar from "./ReactComponents/NavBar.jsx";
 function App() {
     return (
             <div>
                 <Router>
+                    <ButtonAppBar></ButtonAppBar>
                     <Routes>
                         <Route path={"/"} element={<LandingPage />} />
                         <Route path={"/email"} element={<CheckEmail />} />
