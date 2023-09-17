@@ -25,7 +25,7 @@ export function CheckUrl(){
     const pageVariants = {
         initial: {
             opacity: 0,
-            x: '100vw', // Start from the right
+            x: '-100vw', // Start from the left
         },
         animate: {
             opacity: 1,
@@ -37,7 +37,7 @@ export function CheckUrl(){
         },
         exit: {
             opacity: 0,
-            x: '100vw', // Slide out to the right
+            x: '-100vw', // Slide out to the left
             transition: {
                 duration: 0.5,
                 ease: 'easeOut',

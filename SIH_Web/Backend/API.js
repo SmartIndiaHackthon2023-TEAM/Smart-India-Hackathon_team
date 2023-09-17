@@ -18,7 +18,7 @@ const adminSchema = mongoose.Schema({
 
 const Admin = mongoose.model("Admin", adminSchema);
 
-mongoose.connect("mongodb+srv://vibgitcode27:Subzero@cluster0.eiyaeoh.mongodb.net/SIH", {
+mongoose.connect("mongodb+srv://ShashwatPS:s@cluster0.1alkv6j.mongodb.net/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
