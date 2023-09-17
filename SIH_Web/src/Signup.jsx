@@ -82,6 +82,12 @@ function SignIn(){
                                     fullWidth
                                     label="Email Address"
                                     autoComplete="email"
+                                    sx={{
+                                        "& .MuiInputLabel-root": {color: '#1977d2'},//styles the label
+                                        "& .MuiOutlinedInput-root": {
+                                            "& > fieldset": { borderColor: "#1977d2" },
+                                        },
+                                    }}
                                     autoFocus
                                     onChange={(e)=>{
                                         setEmail(e.target.value);
@@ -99,6 +105,12 @@ function SignIn(){
                                     fullWidth
                                     label="Password"
                                     type="password"
+                                    sx={{
+                                        "& .MuiInputLabel-root": {color: '#1977d2'},//styles the label
+                                        "& .MuiOutlinedInput-root": {
+                                            "& > fieldset": { borderColor: "#1977d2" },
+                                        },
+                                    }}
                                     autoComplete="current-password"
                                     onChange={(e)=>{
                                         setPassword(e.target.value);

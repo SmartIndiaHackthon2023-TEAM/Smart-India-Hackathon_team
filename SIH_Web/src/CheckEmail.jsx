@@ -82,8 +82,10 @@ export function CheckEmail(){
                          try { 
                             let response = await fetch('http://127.0.0.1:5000/predict' , {
                             method : 'POST' ,
-                            body : JSON.stringify({   
-                                "Content-type" : "Application/json" ,
+                                headers: {
+                                    'Content-Type': 'application/json' // Set the content type in the headers
+                                },
+                            body : JSON.stringify({
                                 message : emailValue
                             }) ,
                         })
@@ -103,7 +105,7 @@ export function CheckEmail(){
                 <Card>
                     <React.Fragment>
                             <CardContent sx={{bgcolor : "#060606"}} style={{border : "1px solid #ffffff"}}>
-                                <Typography variant="h4" component="div" sx={{color : "#ffffff"}} style={{ fontSize : "1.5rem" , lineHeight : "2.5rem" , fontWeight : "600" , fontFamily : "serif , monospace" , color : "green"}}>
+                                <Typography variant="h4" component="div" sx={{color :  "#ffffff"}} style={{ fontSize : "1.5rem" , lineHeight : "2.5rem" , fontWeight : "600" , fontFamily : "serif , monospace" , color : "green"}}>
                                     {result}
                                 </Typography> 
                             </CardContent>
