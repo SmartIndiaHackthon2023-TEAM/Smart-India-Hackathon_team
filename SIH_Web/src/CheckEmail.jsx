@@ -7,6 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useState } from "react";
+import { motion } from 'framer-motion';
 
 import * as React from 'react';
 import Card from '@mui/material/Card';
@@ -19,10 +20,39 @@ export function CheckEmail(){
 
     let [emailValue , setEmailValue] = useState();
     let [result , setResult] = useState()
+
+    const pageVariants = {
+        initial: {
+            opacity: 0,
+            y: '100%', // Start from the bottom
+        },
+        animate: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 1,
+                ease: 'easeOut',
+            },
+        },
+        exit: {
+            opacity: 0,
+            y: '100%',
+            transition: {
+                duration: 0.5,
+                ease: 'easeOut',
+            },
+        },
+    };
+
+    <ButtonAppBar></ButtonAppBar>
                                     // ********************** //
     return(
-        <div>
-            <ButtonAppBar></ButtonAppBar>
+        <motion.div
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+        >
             <div style={{
                 backgroundColor : "#060606" ,
             height : "78vh" ,
@@ -82,8 +112,10 @@ export function CheckEmail(){
                          try { 
                             let response = await fetch('http://127.0.0.1:5000/predict' , {
                             method : 'POST' ,
-                            body : JSON.stringify({   
-                                "Content-type" : "Application/json" ,
+                                headers: {
+                                    'Content-Type': 'application/json' // Set the content type in the headers
+                                },
+                            body : JSON.stringify({
                                 message : emailValue
                             }) ,
                         })
@@ -103,7 +135,7 @@ export function CheckEmail(){
                 <Card>
                     <React.Fragment>
                             <CardContent sx={{bgcolor : "#060606"}} style={{border : "1px solid #ffffff"}}>
-                                <Typography variant="h4" component="div" sx={{color : "#ffffff"}} style={{ fontSize : "1.5rem" , lineHeight : "2.5rem" , fontWeight : "600" , fontFamily : "serif , monospace" , color : "green"}}>
+                                <Typography variant="h4" component="div" sx={{color :  "#ffffff"}} style={{ fontSize : "1.5rem" , lineHeight : "2.5rem" , fontWeight : "600" , fontFamily : "serif , monospace" , color : "green"}}>
                                     {result}
                                 </Typography> 
                             </CardContent>
@@ -140,6 +172,6 @@ export function CheckEmail(){
                 </div>
             </Container>
         </div>
-        </div>
+        </motion.div>
     )
 }

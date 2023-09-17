@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import pickle
 
 app = Flask(__name__)
+CORS(app)
 
 with open('spam_classification_model.pkl', 'rb') as model_file:
     loaded_model = pickle.load(model_file)
@@ -23,7 +25,7 @@ def predict():
                 result = 'Spam mail'
             return jsonify({'prediction': result})
         except Exception as e:
-            return jsonify({'error': 'Invalid JSON data'}), 400
+            return jsonify({'error': 'Invalid JSON data'}),
 
 if __name__ == '__main__':
     app.run(debug=True)

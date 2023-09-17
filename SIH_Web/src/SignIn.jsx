@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import {useState} from "react";
 import axios from "axios";
+import { motion } from 'framer-motion';
 
 function Copyright(props) {
     return (
@@ -33,6 +34,12 @@ function SignIn(){
     return(
         <div>
             <ThemeProvider theme={defaultTheme}>
+                <motion.div
+                    initial={{ opacity: 0, x: -20, background: "transparent" }}
+                    animate={{ opacity: 1, x: 0, background: "black" }}
+                    exit={{ opacity: 0, background: "transparent" }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
+                >
                 <Grid container component="main" sx={{ height: '100vh' }}>
                     <Grid
                         item
@@ -82,6 +89,12 @@ function SignIn(){
                                     fullWidth
                                     label="Email Address"
                                     autoComplete="email"
+                                    sx={{
+                                        "& .MuiInputLabel-root": {color: '#1977d2'},//styles the label
+                                        "& .MuiOutlinedInput-root": {
+                                            "& > fieldset": { borderColor: "#1977d2" },
+                                        },
+                                    }}
                                     autoFocus
                                     onChange={(e)=>{
                                         setEmail(e.target.value);
@@ -101,6 +114,12 @@ function SignIn(){
                                     label="Password"
                                     type="password"
                                     autoComplete="current-password"
+                                    sx={{
+                                        "& .MuiInputLabel-root": {color: '#1977d2'},//styles the label
+                                        "& .MuiOutlinedInput-root": {
+                                            "& > fieldset": { borderColor: "#1977d2" },
+                                        },
+                                    }}
                                     onChange={(e)=>{
                                         setPassword(e.target.value);
                                     }}
@@ -161,6 +180,7 @@ function SignIn(){
                         </Box>
                     </Grid>
                 </Grid>
+                </motion.div>
             </ThemeProvider>
         </div>
     )
