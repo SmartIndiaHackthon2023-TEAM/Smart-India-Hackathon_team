@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import {useState} from "react";
 import axios from "axios";
+import { motion } from 'framer-motion';
 
 function Copyright(props) {
     return (
@@ -31,7 +32,12 @@ function SignIn(){
     const [email,setEmail] =useState("");
     const [password,setPassword]=useState("");
     return(
-        <div>
+        <motion.div
+            initial={{ opacity: 0, x: 20, background: "transparent" }}
+            animate={{ opacity: 1, x: 0, background: "black" }}
+            exit={{ opacity: 0, background: "transparent" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+        >
             <ThemeProvider theme={defaultTheme}>
                 <Grid container component="main" sx={{ height: '100vh' }}>
                     <Grid
@@ -174,7 +180,7 @@ function SignIn(){
                     </Grid>
                 </Grid>
             </ThemeProvider>
-        </div>
+        </motion.div>
     )
 }
 export default SignIn;

@@ -7,6 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 import * as React from 'react';
 import Card from '@mui/material/Card';
@@ -20,9 +21,37 @@ export function CheckUrl(){
     let [urlValue , setUrlValue] = useState();
     let [result , setResult] = useState()
                                     // ********************** //
+
+    const pageVariants = {
+        initial: {
+            opacity: 0,
+            x: '100vw', // Start from the right
+        },
+        animate: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 0.5, // Adjust the duration for a smoother animation
+                ease: 'easeOut', // Use easeOut for smoother entrance
+            },
+        },
+        exit: {
+            opacity: 0,
+            x: '100vw', // Slide out to the right
+            transition: {
+                duration: 0.5,
+                ease: 'easeOut',
+            },
+        },
+    };
+
     return(
-        <div>
-            <ButtonAppBar></ButtonAppBar>
+        <motion.div
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+        >
             <div style={{
                 backgroundColor : "#060606" ,
             height : "78vh" ,
@@ -114,6 +143,6 @@ export function CheckUrl(){
                 </div>
             </Container>
         </div>
-        </div>
+        </motion.div>
     )
 }

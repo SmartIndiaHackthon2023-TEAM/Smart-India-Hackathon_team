@@ -8,12 +8,17 @@ import Developers_Contributors from "./ReactComponents/Developers_Contributors";
 import DataScientists_Contributors from "./ReactComponents/DataScientists_Contributors";
 import LinkIcon from '@mui/icons-material/Link';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
+import { motion } from 'framer-motion'
 
 export function LandingPage(){
 
     return(
-        <div>
+        <motion.div
+            initial={{ opacity: 0, scale: 0.8, background: "transparent" }}
+            animate={{ opacity: 1, scale: 1, background: "black" }}
+            exit={{ opacity: 0, scale: 0.8, background: "transparent" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+        >
         <div style={{
             backgroundColor : "#060606" ,
             height : "92vh" ,
@@ -144,6 +149,6 @@ export function LandingPage(){
                 </div>
             </Container>
         </div>
-        </div>
+        </motion.div>
     );    
 }

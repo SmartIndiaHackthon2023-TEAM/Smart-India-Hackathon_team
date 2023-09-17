@@ -7,9 +7,11 @@ import {LandingPage} from "./LandingPage.jsx";
 import {CheckEmail} from "./CheckEmail.jsx";
 import ButtonAppBar from "./ReactComponents/NavBar.jsx";
 import { CheckSms } from './CheckSms';
+import {AnimatePresence} from "framer-motion";
 function App() {
     return (
             <div>
+                <AnimatePresence>
                 <Router>
                     <ButtonAppBar></ButtonAppBar>
                     <Routes>
@@ -21,6 +23,7 @@ function App() {
                         <Route path={"/signup"} element={<Signup />} />
                     </Routes>
                 </Router>
+                    </AnimatePresence>
             </div>
   )
 }

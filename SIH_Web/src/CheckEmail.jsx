@@ -7,6 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useState } from "react";
+import { motion } from 'framer-motion';
 
 import * as React from 'react';
 import Card from '@mui/material/Card';
@@ -19,10 +20,39 @@ export function CheckEmail(){
 
     let [emailValue , setEmailValue] = useState();
     let [result , setResult] = useState()
+
+    const pageVariants = {
+        initial: {
+            opacity: 0,
+            y: '100%', // Start from the bottom
+        },
+        animate: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 1,
+                ease: 'easeOut',
+            },
+        },
+        exit: {
+            opacity: 0,
+            y: '100%',
+            transition: {
+                duration: 0.5,
+                ease: 'easeOut',
+            },
+        },
+    };
+
+    <ButtonAppBar></ButtonAppBar>
                                     // ********************** //
     return(
-        <div>
-            <ButtonAppBar></ButtonAppBar>
+        <motion.div
+            variants={pageVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+        >
             <div style={{
                 backgroundColor : "#060606" ,
             height : "78vh" ,
@@ -142,6 +172,6 @@ export function CheckEmail(){
                 </div>
             </Container>
         </div>
-        </div>
+        </motion.div>
     )
 }
