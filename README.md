@@ -68,4 +68,5 @@ The success of this tool will be evaluated based on the following criteria:
 
 ## Conclusion
 
-This project aims to develop a robust and automated phishing domain detection tool that harnesses the power of AI/ML and open-source databases to protect users from phishing attacks. By achieving the outlined objectives, we can enhance online security and reduce the risk of user credential compromise and malware infections.
+In order to safeguard users against phishing assaults, this project intends to provide a reliable and automated phishing domain identification tool that makes use of open-source databases and AI/ML technology. By completing the mentioned goals, we can improve online security and lower the likelihood of malware infestations and user credentials being compromised.
+
