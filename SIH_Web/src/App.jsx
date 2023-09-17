@@ -6,6 +6,7 @@ import {CheckUrl} from "./CheckUrl.jsx";
 import {LandingPage} from "./LandingPage.jsx";
 import {CheckEmail} from "./CheckEmail.jsx";
 import ButtonAppBar from "./ReactComponents/NavBar.jsx";
+import { CheckSms } from './CheckSms';
 function App() {
     return (
             <div>
@@ -15,6 +16,7 @@ function App() {
                         <Route path={"/"} element={<LandingPage />} />
                         <Route path={"/email"} element={<CheckEmail />} />
                         <Route path={"/url"} element={<CheckUrl />} />
+                        <Route path={"/sms"} element={<CheckSms />} />
                         <Route path={"/signin"} element={<SignIn />} />
                         <Route path={"/signup"} element={<Signup />} />
                     </Routes>

@@ -12,12 +12,9 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
-export function CheckEmail(){
-    
-
+export function CheckSms(){
 // ******************************** Make new state variables ******************************************** //
-
-    let [emailValue , setEmailValue] = useState();
+    let [smsValue , setSmsValue] = useState();
     let [result , setResult] = useState()
                                     // ********************** //
     return(
@@ -32,16 +29,6 @@ export function CheckEmail(){
         <Container>
             <div style={{ paddingTop : "150px" ,paddingLeft :"250px" , width : 500 , height : 100 }}>
                 <div style={{border : "2px solid white" , borderRadius : "20px" , padding : "0px"}}>
-                    
-
-
-                    {/* <InputBoxEmail sx={{border: '1px solid green', borderRadius: 1 , height : 800}} style={{width : "1500px"}} onChange={(e) =>
-                    {
-                        setEmailValue(e.target.value);
-                        console.log(emailValue)
-                    }}></InputBoxEmail> */}
-
-
                         {/* *************************** Copy this box and remove <InputBoxEmail> ********************** */}
                     <Box
                         sx={{
@@ -54,37 +41,21 @@ export function CheckEmail(){
                         <TextField style={{color : "white" }} InputLabelProps={{style: { color: '#fff'}}} sx={{ input: { color: 'white' }}}
                         // helperText="Please enter your name"
                         id="demo-helper-text-aligned"
-                        label="Enter Emails"
+                        label="Enter Sms"
                         onChange={ (e) => {
-                            setEmailValue(e.target.value);
+                            setSmsValue(e.target.value);
                         }}/>
                         </Box>
                 </div>
                 <Button style={{width : "50px" ,position : "relative" , top : "-75px" , left : "510px"}} onClick={ async () =>
                 {
-                    // {
-                        //     try {
-                            //         const res = await axios.post("http://127.0.0.1:5000/predict",{
-                    //             data :
-                    //             {
-                    //                 "Content-Type": "application/json",
-                    //                 "message" : emailValue
-                    //             } ,
-                    //         });
-                    //         const data = res.data;
-                    //         localStorage.setItem("token", data.token);
-                    //         window.location = "/";
-                    //     } catch (error) {
-                    //         console.error();
-                    //     }
-                    // }
                     {
                          try { 
                             let response = await fetch('http://127.0.0.1:5000/predict' , {
                             method : 'POST' ,
                             body : JSON.stringify({   
                                 "Content-type" : "Application/json" ,
-                                message : emailValue
+                                message : smsValue
                             }) ,
                         })
                             let data = await response.json();

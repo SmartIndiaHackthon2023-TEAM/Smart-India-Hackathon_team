@@ -89,10 +89,14 @@ if(username)
         {
             window.location = "./url"   
         }}>Check_URL</Button>
-          <Button color="inherit" sx={{marginRight : 55}} onClick={() =>
+          <Button color="inherit" sx={{marginRight : 3 }} onClick={() =>
         {
             window.location = "./email"
         }}>Check_Email</Button>
+        <Button color="inherit" sx={{marginRight : 50}} onClick={() =>
+        {
+            window.location = "./sms"
+        }}>Check_Sms</Button>
         <div>
           <Avatar alt="Remy Sharp" src="src\assets\Avatar.png" style={{paddingLeft :"20px"}}/>
           <span style={{marginRight : "30px"}}>{username.split('@')[0]}</span>

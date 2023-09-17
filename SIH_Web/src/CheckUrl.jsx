@@ -1,40 +1,89 @@
 import ButtonAppBar from "./ReactComponents/NavBar"
-import OutlinedCard from "./ReactComponents/Cards/Card1"
 import { Button, Container } from "@mui/material";
-import InputBoxEmail from "./ReactComponents/InputBoxEmail";
 import TroubleshootIcon from '@mui/icons-material/Troubleshoot';
 import Typography from '@mui/material/Typography';
 import LinkIcon from '@mui/icons-material/Link';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import InputBoxUrl from "./ReactComponents/InputBoxUrl";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { useState } from "react";
+
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
 
 export function CheckUrl(){
+    
+
+// ******************************** Make new state variables ******************************************** //
+
+    let [urlValue , setUrlValue] = useState();
+    let [result , setResult] = useState()
+                                    // ********************** //
     return(
         <div>
             <ButtonAppBar></ButtonAppBar>
             <div style={{
-            backgroundColor : "#060606" ,
+                backgroundColor : "#060606" ,
             height : "78vh" ,
             borderBottom : "2px solid #1e1e1f" ,
             padding : "0px"
         }}>
         <Container>
-            <div style={{ paddingTop : "150px" ,paddingLeft :"250px" , width : 500 , height : 400 }}>
+            <div style={{ paddingTop : "150px" ,paddingLeft :"250px" , width : 500 , height : 100 }}>
                 <div style={{border : "2px solid white" , borderRadius : "20px" , padding : "0px"}}>
-                    <InputBoxUrl sx={{border: '1px solid green', borderRadius: 1 , height : 800}} style={{width : "1500px"}}></InputBoxUrl>
+                        {/* *************************** Copy this box and remove <InputBoxEmail> ********************** */}
+                    <Box
+                        sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        '& > :not(style)': { m: 1 },
+                        color : "white" ,
+                        backgroundColor : "#060606"
+                        }} >
+                        <TextField style={{color : "white" }} InputLabelProps={{style: { color: '#fff'}}} sx={{ input: { color: 'white' }}}
+                        // helperText="Please enter your name"
+                        id="demo-helper-text-aligned"
+                        label="Enter Url"
+                        onChange={ (e) => {
+                            setUrlValue(e.target.value);
+                        }}/>
+                        </Box>
                 </div>
-                <Button style={{width : "50px" ,position : "relative" , top : "-75px" , left : "510px"}} onClick={() =>
+                <Button style={{width : "50px" ,position : "relative" , top : "-75px" , left : "510px"}} onClick={ async () =>
                 {
-
-                    /*************** Axios to communicate with Api of ml model ********************/
-
-
-
-
-
-
-
+                    {
+                         try { 
+                            let response = await fetch('http://127.0.0.1:5000/predict' , {
+                            method : 'POST' ,
+                            body : JSON.stringify({   
+                                "Content-type" : "Application/json" ,
+                                message : urlValue
+                            }) ,
+                        })
+                            let data = await response.json();
+                                setResult(data.prediction);
+                            } catch (error) {
+                                console.error();
+                            }
+                    }
                 }}  ><TroubleshootIcon style={{color : "#fafafa" , fontSize : "60px"}}></TroubleshootIcon></Button>
+            </div>
+            <div style={{color : "white"}}>
+
+                {/* **************** ADD THIS BOX *********************** */}
+
+            <Box sx={{ width: 350 , marginLeft : "45vh", marginTop : "30px"}}>
+                <Card>
+                    <React.Fragment>
+                            <CardContent sx={{bgcolor : "#060606"}} style={{border : "1px solid #ffffff"}}>
+                                <Typography variant="h4" component="div" sx={{color : "#ffffff"}} style={{ fontSize : "1.5rem" , lineHeight : "2.5rem" , fontWeight : "600" , fontFamily : "serif , monospace" , color : "green"}}>
+                                    {result}
+                                </Typography> 
+                            </CardContent>
+                        </React.Fragment>
+                    </Card>
+                </Box>
             </div>
         </Container>
         </div>
