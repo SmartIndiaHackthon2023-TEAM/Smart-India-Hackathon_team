@@ -24,19 +24,19 @@ export function CheckEmail(){
     const pageVariants = {
         initial: {
             opacity: 0,
-            y: '100%', // Start from the bottom
+            x: '100vw',
         },
         animate: {
             opacity: 1,
-            y: 0,
+            x: 0,
             transition: {
-                duration: 1,
+                duration: 0.5,
                 ease: 'easeOut',
             },
         },
         exit: {
             opacity: 0,
-            y: '100%',
+            x: '100vw',
             transition: {
                 duration: 0.5,
                 ease: 'easeOut',

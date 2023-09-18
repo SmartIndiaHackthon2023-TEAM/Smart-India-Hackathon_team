@@ -4,11 +4,13 @@ from urllib.parse import urlparse
 import re
 from tld import get_tld
 import pickle
+from flask_cors import CORS
 
 from model import count_dot, no_of_embed, shortening_service, count_https, count_http, fd_length, tld_length, \
     no_of_dir
 
 app = Flask(__name__)
+CORS(app)
 
 with open('xgb_c_pkl', 'rb') as f:
     mod = pickle.load(f)

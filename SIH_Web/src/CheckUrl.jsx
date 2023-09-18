@@ -25,19 +25,19 @@ export function CheckUrl(){
     const pageVariants = {
         initial: {
             opacity: 0,
-            x: '-100vw', // Start from the left
+            x: '100vw',
         },
         animate: {
             opacity: 1,
             x: 0,
             transition: {
-                duration: 0.5, // Adjust the duration for a smoother animation
-                ease: 'easeOut', // Use easeOut for smoother entrance
+                duration: 0.5,
+                ease: 'easeOut',
             },
         },
         exit: {
             opacity: 0,
-            x: '-100vw', // Slide out to the left
+            x: '100vw',
             transition: {
                 duration: 0.5,
                 ease: 'easeOut',
@@ -82,18 +82,21 @@ export function CheckUrl(){
                 <Button style={{width : "50px" ,position : "relative" , top : "-75px" , left : "510px"}} onClick={ async () =>
                 {
                     {
-                         try { 
+                        try {
                             let response = await fetch('http://127.0.0.1:8888/predict' , {
-                            method : 'POST' ,
-                            body : JSON.stringify({
-                                url : urlValue
-                            }) ,
-                        })
+                                method : 'POST' ,
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body : JSON.stringify({
+                                    url : urlValue
+                                }) ,
+                            })
                             let data = await response.json();
-                                setResult(data.prediction);
-                            } catch (error) {
-                                console.error();
-                            }
+                            setResult(data.prediction);
+                        } catch (error) {
+                            console.error();
+                        }
                     }
                 }}  ><TroubleshootIcon style={{color : "#fafafa" , fontSize : "60px"}}></TroubleshootIcon></Button>
             </div>
