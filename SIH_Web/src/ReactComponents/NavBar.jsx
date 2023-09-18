@@ -98,7 +98,7 @@ if(username)
             window.location = "./sms"
         }}>Check_Sms</Button>
         <div>
-            <Avatar alt="Remy Sharp" src="src\assets\Avatar.png" style={{paddingLeft :"20px"}}/>
+            <Avatar alt="Remy Sharp" src="src\assets\TeamLogo.png" style={{paddingLeft :"20px"}}/>
           <span style={{marginRight : "30px"}}>{username.split('@')[0]}</span>
         </div>
           <Button color="inherit" sx={{marginRight : 3}} onClick={() => {localStorage.setItem("token" , null) , window.location = "/"}}>Logout</Button>
