@@ -88,7 +88,8 @@ function SignIn(){
                                     required
                                     fullWidth
                                     label="Email Address"
-                                    autoComplete="email"
+                                    autoComplete="email"    
+                                    className='inputField'
                                     sx={{
                                         "& .MuiInputLabel-root": {color: '#1977d2'},//styles the label
                                         "& .MuiOutlinedInput-root": {
@@ -100,10 +101,10 @@ function SignIn(){
                                         setEmail(e.target.value);
                                     }}
                                     InputLabelProps={{
-                                        style: { color: 'white' }
+                                        style: { color: 'white' , backgroundColor : "black"} 
                                     }}
                                     InputProps={{
-                                        style: { color: 'white' },
+                                        style: { color: 'white'  , backgroundColor : "black"},
                                     }}
 
                                 />

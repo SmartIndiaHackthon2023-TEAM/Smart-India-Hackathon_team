@@ -81,7 +81,7 @@ export function CheckEmail(){
                         color : "white" ,
                         backgroundColor : "#060606"
                         }} >
-                        <TextField style={{color : "white" }} InputLabelProps={{style: { color: '#fff'}}} sx={{ input: { color: 'white' }}}
+                        <TextField style={{color : "white" }} InputLabelProps={{style: { color: '#fff' }}} sx={{ input: { color: 'white' , width : "500px"}}}
                         // helperText="Please enter your name"
                         id="demo-helper-text-aligned"
                         label="Enter Emails"
@@ -92,22 +92,6 @@ export function CheckEmail(){
                 </div>
                 <Button style={{width : "50px" ,position : "relative" , top : "-75px" , left : "510px"}} onClick={ async () =>
                 {
-                    // {
-                        //     try {
-                            //         const res = await axios.post("http://127.0.0.1:5000/predict",{
-                    //             data :
-                    //             {
-                    //                 "Content-Type": "application/json",
-                    //                 "message" : emailValue
-                    //             } ,
-                    //         });
-                    //         const data = res.data;
-                    //         localStorage.setItem("token", data.token);
-                    //         window.location = "/";
-                    //     } catch (error) {
-                    //         console.error();
-                    //     }
-                    // }
                     {
                          try { 
                             let response = await fetch('http://127.0.0.1:5000/predict' , {

@@ -66,7 +66,7 @@ export function CheckSms(){
                         color : "white" ,
                         backgroundColor : "#060606"
                         }} >
-                        <TextField style={{color : "white" }} InputLabelProps={{style: { color: '#fff'}}} sx={{ input: { color: 'white' }}}
+                        <TextField style={{color : "white" }} InputLabelProps={{style: { color: '#fff'}}} sx={{ input: { color: 'white' , width : "500px" }}}
                         // helperText="Please enter your name"
                         id="demo-helper-text-aligned"
                         label="Enter Sms"
@@ -79,11 +79,10 @@ export function CheckSms(){
                 {
                     {
                          try { 
-                            let response = await fetch('http://127.0.0.1:5000/predict' , {
+                            let response = await fetch('http://127.0.0.1:8080/predict' , {
                             method : 'POST' ,
-                            body : JSON.stringify({   
-                                "Content-type" : "Application/json" ,
-                                message : smsValue
+                            body : JSON.stringify({
+                                sms : smsValue
                             }) ,
                         })
                             let data = await response.json();

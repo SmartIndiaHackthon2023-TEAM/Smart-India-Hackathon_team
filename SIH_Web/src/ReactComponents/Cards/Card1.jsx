@@ -28,7 +28,7 @@ const card = (
           adjective
         </Typography> */}
         <Typography variant="body2" sx={{ marginTop: 4}} style={{ fontSize : "16px" , lineHeight : "24px"}} color="#d4d4d4">
-        A well-trained AI model can significantly improve the detection of phishing sites. It's essential to constantly update the model, ensure you have good sources of genuine and phishing site data, and have a usable interface for end-users.
+        A well-trained AI model can significantly improve the detection of phishing sites. It's essential to constantly update the model, ensure you have good sources of genuine and phishing site data, and have a useable interface for end-users.
           <br />
           {/* {'"a benevolent smile"'} */}
         </Typography>
