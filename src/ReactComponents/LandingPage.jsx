@@ -12,14 +12,42 @@ import { Avatar, Container, ListItemAvatar } from "@mui/material";
 import { useEffect } from "react";
 import { FloatingNavBar } from "./FloatingNavBar";
 import { CuMarq } from "./Custom_marquee";
-
+import { useState } from "react"
+import { SignInPop } from "./SignInPopup";
+import { SignUpPop } from "./SignUpPopup";
 
 export function LandingPage()
 {
+    const [popup , setPopup] = useState(false)
+    const [signuppopup , setSignUpPopup] = useState(false)
+
+    useEffect(() => {
+        if (signuppopup) {
+            document.body.classList.add('active-Popup');
+        } else {
+            document.body.classList.remove('active-Popup');
+        }
+    return () => {
+            document.body.classList.remove('active-Popup');
+        }
+    }, [signuppopup]);
+
+    
     useEffect(() =>
     {
         AOS.init({duration : 700})
     } ,[])
+
+    useEffect(() => {
+        if (popup) {
+            document.body.classList.add('active-Popup');
+        } else {
+            document.body.classList.remove('active-Popup');
+        }
+    return () => {
+            document.body.classList.remove('active-Popup');
+        }
+    }, [popup]);
 
     return (
         <div>
@@ -41,9 +69,23 @@ export function LandingPage()
                     </p>
                 </div>
                 <p className="navbarLinks"><a href="https://sih.gov.in/sih2023PS" target="_blank">SIH</a></p>
-                <Button variant="contained" id="LPSignIn">Sign In</Button>
-                <Button variant="outlined" id="LPSignUp">Sign up</Button>
+                <Button variant="contained" id="LPSignIn"onClick={() =>
+                {
+                    setPopup(!popup);
+                }}>LogIn</Button>
+                <Button variant="outlined" id="LPSignUp" onClick={() =>
+                {
+                    console.log(signuppopup)
+                    setSignUpPopup(!signuppopup)
+                }}>Sign up</Button>
             </div>
+            {popup && (
+                <SignInPop popup={popup} setPopup={setPopup} signuppopup={signuppopup} setSignUpPopup={setSignUpPopup} />
+            )}
+
+            {signuppopup && (
+                <SignUpPop signuppopup={signuppopup} setSignUpPopup={setSignUpPopup}/>
+            )}
             {/* Deco BOx            */}
             <div className="decobox">
                 <div id="addblock">
