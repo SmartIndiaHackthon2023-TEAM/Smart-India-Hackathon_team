@@ -15,14 +15,19 @@ import { CuMarq } from "./Custom_marquee";
 import { useState } from "react"
 import { SignInPop } from "./SignInPopup";
 import { SignUpPop } from "./SignUpPopup";
+import axios from "axios";
+import { useRecoilState } from "recoil";
+import { LogInPop } from "../store/atoms/LogInPop"
+import { lodge } from "../store/atoms/signUpPop";
+import { StaticNavBar } from "./NavBars/StaticNavBar";
 
 export function LandingPage()
 {
-    const [popup , setPopup] = useState(false)
-    const [signuppopup , setSignUpPopup] = useState(false)
+    const [popup , setPopup] = useRecoilState(LogInPop)
+    const [signuppopup , setSignUpPopup] = useRecoilState(lodge)
 
     useEffect(() => {
-        if (signuppopup) {
+        if (signuppopup==false) {
             document.body.classList.add('active-Popup');
         } else {
             document.body.classList.remove('active-Popup');
@@ -39,7 +44,7 @@ export function LandingPage()
     } ,[])
 
     useEffect(() => {
-        if (popup) {
+        if (popup==false) {
             document.body.classList.add('active-Popup');
         } else {
             document.body.classList.remove('active-Popup');
@@ -55,37 +60,7 @@ export function LandingPage()
             <FloatingNavBar></FloatingNavBar>
             <CuMarq></CuMarq>
             {/* // navbar */}
-            <div className="navbar">
-                <h2>Team.</h2>
-                <div id="typing">
-                    <h3>We Check</h3>
-                    <p>
-                    <Typed strings={["URLs" , "EMAILs" , "SMS"]}
-                    typeSpeed={100}
-                    backSpeed={70}
-                    loop={true}
-                    >
-                    </Typed>
-                    </p>
-                </div>
-                <p className="navbarLinks"><a href="https://sih.gov.in/sih2023PS" target="_blank">SIH</a></p>
-                <Button variant="contained" id="LPSignIn"onClick={() =>
-                {
-                    setPopup(!popup);
-                }}>LogIn</Button>
-                <Button variant="outlined" id="LPSignUp" onClick={() =>
-                {
-                    console.log(signuppopup)
-                    setSignUpPopup(!signuppopup)
-                }}>Sign up</Button>
-            </div>
-            {popup && (
-                <SignInPop popup={popup} setPopup={setPopup} signuppopup={signuppopup} setSignUpPopup={setSignUpPopup} />
-            )}
-
-            {signuppopup && (
-                <SignUpPop signuppopup={signuppopup} setSignUpPopup={setSignUpPopup}/>
-            )}
+            <StaticNavBar/>
             {/* Deco BOx            */}
             <div className="decobox">
                 <div id="addblock">

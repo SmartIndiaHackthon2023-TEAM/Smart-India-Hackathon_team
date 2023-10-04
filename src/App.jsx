@@ -1,25 +1,65 @@
 // import './App.css'
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import { LandingPage } from './ReactComponents/LandingPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SignIn from './ReactComponents/SignIn';
-import Signup from './ReactComponents/Signup';
+import { CheckUrl } from './ReactComponents/CheckUrl';
+import { RecoilRoot, useSetRecoilState} from 'recoil';
+import axios from 'axios';
+import { userState } from './store/atoms/user';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
+    <RecoilRoot>
+        <div>
                 <Router>
-                    
+                    <ActiveUser/>
                     <Routes>
                         <Route path={"/"} element={<LandingPage/>}/>
-                        <Route path={"/signin"} element={<SignIn/>} />
-                        <Route path={"/signup"} element={<Signup/>} />
+                        <Route path={"/checkUrl"} element={<CheckUrl/>} />
+                        {/* <Route path={""} element={<Signup/>} /> */}
                     </Routes>
                 </Router>
             </div>
+      </RecoilRoot>
   )
+}
+
+function ActiveUser() {
+    const setUser = useSetRecoilState(userState);
+    const AU = async() => {
+        try {
+            const response = axios.get("http://localhost:3000/me",{
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`,
+                }
+            })
+
+            if (response.data.username) {
+                setUser({
+                    isLoading: false,
+                    userEmail: response.data.username
+                })
+            } else {
+                setUser({
+                    isLoading: false,
+                    userEmail: null
+                })
+            }
+        } catch (e) {
+
+            setUser({
+                isLoading: false,
+                userEmail: null
+            })
+        }
+    };
+
+    useEffect(() => {
+        AU();
+    }, []);
+
+    return <></>
 }
 
 export default App

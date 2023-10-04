@@ -1,9 +1,20 @@
 import { useState } from "react"
 import "../App.css"
 import {TextField , Button} from "@mui/material";
+import { LogInPop } from "../store/atoms/LogInPop";
+import { lodge } from "../store/atoms/signUpPop";
+import { useRecoilState , useSetRecoilState } from "recoil";
+import { userState } from "../store/atoms/user";
+import axios from "axios";
 
-export function SignUpPop({signuppopup , setSignUpPopup})
+export function SignUpPop()
 {
+    const [popup , setPopup] = useRecoilState(LogInPop)
+    const [signuppopup , setSignUpPopup] = useRecoilState(lodge)
+    const setUser = useSetRecoilState(userState);
+    const [ email , setEmail] = useState("");
+    const [ password , setPassword] = useState("");
+
     return (
         <>
             <div className="popUp">
@@ -20,7 +31,11 @@ export function SignUpPop({signuppopup , setSignUpPopup})
                             </div>
                                 <aside>
                                 <p>Already a member?</p>
-                                <span>Log In</span>
+                                <span onClick={() =>
+                                {
+                                    setPopup(!popup)
+                                    setSignUpPopup(!signuppopup)
+                                }}>Log In</span>
                                 </aside>
                         </div>
                                 {/* </div> */}
@@ -79,8 +94,27 @@ export function SignUpPop({signuppopup , setSignUpPopup})
                                         style: { color: 'black'  , backgroundColor : "white"},
                                     }}
                                 />
-                            <Button variant="outlined" id="LPSignIn" onClick={() =>
+                            <Button variant="outlined" id="LPSignIn" onClick={ async () =>
                             {
+                                try {
+                                    let sendData = {
+                                        username : email,
+                                        password : password
+                                    }
+                                    const res = await axios.post("http://localhost:3000/signup",sendData,{
+                                        headers: {
+                                            "Content-Type": "application/json",
+                                        },
+                                    });
+                                    const data = res.data;
+                                    localStorage.setItem("token", data.token);
+                                    setUser({
+                                        userEmail: email,
+                                        isLoading: false
+                                    })
+                                } catch (error) {
+                                    console.error();
+                                }
                                 setSignUpPopup(!signuppopup)
                             }}>SignUp</Button> 
                             </div>

@@ -50,7 +50,7 @@ a
 body {
   --space : 3rem;
   min-height : 100vh;
-  /* display: grid;
+  /* display: grid; 
   align-content: center;
   overflow: hidden; */
   background-color:#e4e4e4;
@@ -90,6 +90,34 @@ body::-webkit-scrollbar{
 {
   z-index: 2;
   position: relative;
+}
+
+.button-appeared
+{
+  z-index: 2;
+  position: relative;
+  width: 20vh;
+  height : 8vh;
+  margin-left: 0.5vh;  
+  border-radius: 12px;
+  color : white;
+}
+
+#appeared1
+{
+  margin-left: -2.5vh ;
+}
+
+/* .button-appeared:hover
+{
+  border: 1px solid gold; 
+  color : gold;
+} */
+
+.Gold-Button:hover
+{
+  color: gold !important;
+  border: 1px solid gold;
 }
 
 .marquee{
