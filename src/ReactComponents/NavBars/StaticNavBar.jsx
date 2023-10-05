@@ -13,6 +13,7 @@ import { emailSelector } from "../../store/selectors/userEmail";
 import Button from '@mui/material/Button';
 import { userState } from "../../store/atoms/user";
 import Avatar from '@mui/material/Avatar';
+import { useNavigate } from "react-router-dom";
 
 export function StaticNavBar()
 {
@@ -20,6 +21,7 @@ export function StaticNavBar()
     const [popup , setPopup] = useRecoilState(LogInPop)
     const [signuppopup , setSignUpPopup] = useRecoilState(lodge)
     const setUser = useSetRecoilState(userState);
+    const navigate = useNavigate();
 
     useEffect(() =>
     {
@@ -45,13 +47,14 @@ export function StaticNavBar()
                     </div>
                     <p className="navbarLinks"><a href="https://sih.gov.in/sih2023PS" target="_blank">SIH</a></p>
                     <Avatar alt="Remy Sharp" src="src\assets\avatar.jpg" style={{marginRight : "2vh" , marginTop : "1.5vh" , borderRadius : "30px" , border : "2px solid grey"}}/>
-                    <Button variant="contained" id="LPSignIn"onClick={() =>
+                    <Button variant="contained" id="LPSignIn" onClick={() =>
                     {
                         localStorage.setItem("token" , null);
                         setUser({
                             userEmail: null,
                             isLoading: false
                         })
+                        navigate("/");
                     }}>LogOut</Button>
                     <Button variant="outlined" id="LPSignUp">Contribute</Button>
                 </div>

@@ -10,7 +10,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { Avatar, Container, ListItemAvatar } from "@mui/material";
 import { useEffect } from "react";
-import { FloatingNavBar } from "./FloatingNavBar";
+import { FloatingNavBar } from "./NavBars/FloatingNavBar";
 import { CuMarq } from "./Custom_marquee";
 import { useState } from "react"
 import { SignInPop } from "./SignInPopup";

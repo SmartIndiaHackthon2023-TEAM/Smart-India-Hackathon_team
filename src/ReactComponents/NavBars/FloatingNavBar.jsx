@@ -1,17 +1,18 @@
 import { Button } from "@mui/material";
-import "../App.css"
-import { LogInPop } from "../store/atoms/LogInPop";
-import { lodge } from "../store/atoms/signUpPop";
+import "../../App.css"
+import { LogInPop } from "../../store/atoms/LogInPop";
+import { lodge } from "../../store/atoms/signUpPop";
 import { useRecoilState , useRecoilValue } from "recoil";
-import { emailSelector } from "../store/selectors/userEmail"; 
+import { emailSelector } from "../../store/selectors/userEmail"; 
 import Avatar from '@mui/material/Avatar';
-
+import { useNavigate } from "react-router-dom";
 
 export function FloatingNavBar()
 {
     const [popup , setPopup] = useRecoilState(LogInPop)
     const [signuppopup , setSignUpPopup] = useRecoilState(lodge)
     const userEmail = useRecoilValue(emailSelector)
+    const navigate = useNavigate();
 
     if(userEmail)
     {
@@ -26,13 +27,22 @@ export function FloatingNavBar()
                     </div>
                     <div className="SS">
                     <div className="button-appeared" id="appeared1">
-                    <Button className="Gold-Button" style={{backgroundColor : "#222222" , height : "8vh" , width : "20vh" , opacity : "1" , borderRadius : "12px" , color : "white"}}>Check-Url</Button>
+                    <Button className="Gold-Button" style={{backgroundColor : "#222222" , height : "8vh" , width : "20vh" , opacity : "1" , borderRadius : "12px" , color : "white"}} onClick={() =>
+                    {
+                        navigate("/checkUrl");
+                    }}>Check-Url</Button>
                     </div>
                     <div className="button-appeared">
-                    <Button className="Gold-Button" style={{backgroundColor : "#222222" , height : "8vh" , width : "20vh", opacity : "1" , borderRadius : "12px" , color : "white"}}>Check-Email</Button>
+                    <Button className="Gold-Button" style={{backgroundColor : "#222222" , height : "8vh" , width : "20vh", opacity : "1" , borderRadius : "12px" , color : "white"}} onClick={() =>
+                    {
+                        navigate("/checkEmail");
+                    }}>Check-Email</Button>
                     </div>
                     <div className="button-appeared">
-                    <Button className="Red-Button" style={{backgroundColor : "#222222" , height : "8vh" , width : "20vh" , borderRadius : "12px" , backgroundColor : "#ff602c" , color : "black"}}>Check-SMS</Button>
+                    <Button className="Red-Button" style={{backgroundColor : "#222222" , height : "8vh" , width : "20vh" , borderRadius : "12px" , backgroundColor : "#ff602c" , color : "black"}} onClick={() =>
+                    {
+                        navigate("/checkSMS");
+                    }}>Check-SMS</Button>
                     </div>
                     </div>
                 </section>
@@ -43,7 +53,10 @@ export function FloatingNavBar()
     return (
         <section className="FloatingNav">
             <div className="button">
-            <Button style={{backgroundColor : "#222222" , height : "8vh" , width : "30vh" , marginLeft : "2vh" , marginTop : "1vh" , opacity : "1" , borderRadius : "12px" , color : "yellow"}}>_TEAM</Button>
+            <Button style={{backgroundColor : "#222222" , height : "8vh" , width : "30vh" , marginLeft : "2vh" , marginTop : "1vh" , opacity : "1" , borderRadius : "12px" , color : "yellow"}} onClick={() =>
+            {
+                navigate("/");
+            }}>_TEAM</Button>
             </div>
             <div className="SS">
             <div className="button">

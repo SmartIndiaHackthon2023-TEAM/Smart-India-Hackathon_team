@@ -3,6 +3,8 @@ import { useState , useEffect } from 'react'
 import { LandingPage } from './ReactComponents/LandingPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CheckUrl } from './ReactComponents/CheckUrl';
+import { CheckEmail } from './ReactComponents/CheckEmail';
+import { CheckSMS } from './ReactComponents/CheckSms';
 import { RecoilRoot, useSetRecoilState} from 'recoil';
 import axios from 'axios';
 import { userState } from './store/atoms/user';
@@ -17,7 +19,8 @@ function App() {
                     <Routes>
                         <Route path={"/"} element={<LandingPage/>}/>
                         <Route path={"/checkUrl"} element={<CheckUrl/>} />
-                        {/* <Route path={""} element={<Signup/>} /> */}
+                        <Route path={"/checkEmail"} element={<CheckEmail/>} />
+                        <Route path={"/checkSMS"} element={<CheckSMS/>} />
                     </Routes>
                 </Router>
             </div>

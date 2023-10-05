@@ -8,15 +8,19 @@ import ChangeHistoryIcon from '@mui/icons-material/ChangeHistory';
 import Typed from 'react-typed'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import { FloatingNavBar } from "./NavBars/FloatingNavBar";
 import { Avatar, Container, ListItemAvatar } from "@mui/material";
 import { useEffect } from "react";
-import { FloatingNavBar } from "./FloatingNavBar";
 import { CuMarq } from "./Custom_marquee";
 import { useState } from "react"
+import { StaticNavBar } from "./NavBars/StaticNavBar";
+import AddIcon from '@mui/icons-material/Add';
 
 export function CheckUrl()
 {
 
+    let [urlValue , setUrlValue] = useState();
+    let [result , setResult] = useState()
     useEffect(() =>
     {
         AOS.init({duration : 700})
@@ -24,29 +28,87 @@ export function CheckUrl()
 
     return (
         <>
+            <FloatingNavBar/>
             <CuMarq></CuMarq>
-            <div className="navbar">
-                <h2>Team.</h2>
-                <div id="typing">
-                    <h3>We Detect</h3>
-                    <p>
-                    <Typed strings={["Phish" , "Malware"]}
-                    typeSpeed={100}
-                    backSpeed={70}
-                    loop={true}
-                    >
-                    </Typed>
-                    </p>
-                </div>
-                <p className="navbarLinks"><a href="https://sih.gov.in/sih2023PS" target="_blank">SIH</a></p>
-                <Button variant="contained" id="LPSignIn">Logout</Button>
-                <Button variant="outlined" id="LPSignUp">Contibute</Button>
-            </div>
-            <div id="small-fp-text"><p>A Submission for SIH 2023</p></div>
+            <StaticNavBar/>
+            <div id="small-fp-text"><p>Powered by RFC and XGBoost (:)</p></div>
             <div className="largeTextDiv" data-aos="fade-up">
-                <p className="largeText">+_+</p>
-                <p className="largeText">CHECK.U-R-L</p>
+                <p className="largeText" style={{marginRight : "8vh"}}>CHECK.`{`URL`}`</p>
             </div>
+
+            <section>
+                <div className="backBox" id="backBox1">
+                    <div className="frontBox" data-aos='fade-in'>
+                        <p>=_=</p>
+                        <h1>Real-time phishing and fraudulent website detection</h1>
+                        <span>A well-trained AI model can significantly improve the detection of phishing sites.</span>
+                        <br></br>
+                        <span>It's essential to constantly update the model, ensure you have good sources of genuine and phishing site data,</span>
+                        <br />
+                        <span>and have a useable interface for end-users</span>
+                    </div>
+                </div>
+            </section>
+
+            <section className="useBoxSec">
+                <div className="useBox" data-aos='fade-in'>
+                        <div className="redUseBox">
+                                <h1>CHECK URL</h1>
+                                <div style={{display : "flex", flexDirection : "row" }}>
+                                    <div className="startPattern1">
+                                        <p><AddIcon/></p>
+                                        <p><AddIcon/></p>
+                                        <p><AddIcon/></p>
+                                    </div>
+                                <div>
+                                    <div className="redInput">
+                                        <input type="text" placeholder="URL" name = "email" onChange={ (e) => {
+                                            setUrlValue(e.target.value);
+                                        }}/>
+                                        <Button variant="outlined" id="redButton" onClick={ async () =>
+                {
+                    {
+                        try {
+                            let response = await fetch('http://127.0.0.1:8888/predict' , {
+                                method : 'POST' ,
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body : JSON.stringify({
+                                    url : urlValue
+                                }) ,
+                            })
+                            let data = await response.json();
+                            setResult(data.prediction);
+                        } catch (error) {
+                            console.error();
+                        }
+                    }
+                }}>Submit</Button>
+                                    </div>
+                                    <div className="redInput" id="redInput">
+                                        <Button variant="outlined" id="redButton">Result :</Button>
+                                        <div className="whiteSpace">
+                                            <p>THIS IS RESULT</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <div className="startPattern2">
+                                        <p><AddIcon/></p>
+                                        <p><AddIcon/></p>
+                                        <p><AddIcon/></p>
+                                    </div>
+                                </div>
+                        </div>
+                            <div className="blackInRed">
+                                <p>
+                                Made with <img src="src\assets\heart.png" alt="" className="love" /> by TEAM
+                                </p>
+                            </div>
+                    
+                    </div>
+            </section>
+
             <section className="footer">
                 <aside>
                     <h2>Technologies & Tools.</h2>
