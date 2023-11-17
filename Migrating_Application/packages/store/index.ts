@@ -5,5 +5,4 @@ export * from "./atoms/SignUpPop"
 export * from "./atoms/User"
 
 // Selectors exports
-
-// export * from "./selectors"
+export * from "./selectors/userEmail"
