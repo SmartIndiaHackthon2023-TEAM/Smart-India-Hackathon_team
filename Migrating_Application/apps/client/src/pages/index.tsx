@@ -32,7 +32,7 @@ export function LandingPage()
     const [signuppopup , setSignUpPopup] = useRecoilState(lodge)
 
     useEffect(() => {
-        if (signuppopup==false) {
+        if (signuppopup.Spopup == false) {
             document.body.classList.add('active-Popup');
         } else {
             document.body.classList.remove('active-Popup');
@@ -49,7 +49,7 @@ export function LandingPage()
     } ,[])
 
     useEffect(() => {
-        if (popup==false) {
+        if (popup.Lpopup == false) {
             document.body.classList.add('active-Popup');
         } else {
             document.body.classList.remove('active-Popup');
