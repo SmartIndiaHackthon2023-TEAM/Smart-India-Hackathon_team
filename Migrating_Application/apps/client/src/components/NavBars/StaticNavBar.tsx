@@ -1,11 +1,9 @@
-import "../../App.css"
+// import "../../App.css"
 import * as React from 'react';
 import Typed from 'react-typed'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 
-// import { SignInPop } from "../SignInPopup";
-// import { SignUpPop } from "../SignUpPopup";
 import { SignInPop } from "../SignInPopup";
 import { SignUpPop } from "../SignUpPopup";
 
