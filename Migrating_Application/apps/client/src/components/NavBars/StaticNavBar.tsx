@@ -1,10 +1,12 @@
-import "../../App.css"
+// import "../../App.css"
 import * as React from 'react';
 import Typed from 'react-typed'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+
 import { SignInPop } from "../SignInPopup";
 import { SignUpPop } from "../SignUpPopup";
+
 import { useRecoilState , useRecoilValue , useSetRecoilState} from "recoil";
 import { useEffect } from "react";
 import Button from '@mui/material/Button';
@@ -20,6 +22,7 @@ import { LogInPop } from "store";
 import { lodge } from "store";
 import { emailSelector } from "store";
 import { userState } from "store";
+
 // import { useNavigate } from "react-router-dom";
 import { useRouter } from "next/router";
 
@@ -56,12 +59,12 @@ export function StaticNavBar()
                     <Avatar alt="Remy Sharp" src="src\assets\avatar.jpg" style={{marginRight : "2vh" , marginTop : "1.5vh" , borderRadius : "30px" , border : "2px solid grey"}}/>
                     <Button variant="contained" id="LPSignIn" onClick={() =>
                     {
-                        localStorage.setItem("token" , null);
+                        localStorage.setItem("token" , String(null));
                         setUser({
                             userEmail: null,
                             isLoading: false
                         })
-                        navigate("/");
+                        router.push("/");
                     }}>LogOut</Button>
                     <Button variant="outlined" id="LPSignUp">Contribute</Button>
                 </div>
@@ -88,18 +91,19 @@ export function StaticNavBar()
                     <p className="navbarLinks"><a href="https://sih.gov.in/sih2023PS" target="_blank">SIH</a></p>
                     <Button variant="contained" id="LPSignIn"onClick={() =>
                     {
-                        setPopup(!popup);
+                        setPopup((currVal) => ({ ...currVal, Spopup: !currVal.Lpopup }));
                     }}>LogIn</Button>
                     <Button variant="outlined" id="LPSignUp" onClick={() =>
                     {
-                        setSignUpPopup(!signuppopup)
+                        setSignUpPopup((currVal) => ({ ...currVal, Spopup: !currVal.Spopup }));
+
                     }}>Sign up</Button>
                 </div>
-                {popup==false && (
+                {popup.Lpopup == false && (
                     <SignInPop/>
                 )}
         
-                {signuppopup==false && (
+                {signuppopup.Spopup == false && (
                     <SignUpPop/>
                 )}
             </>

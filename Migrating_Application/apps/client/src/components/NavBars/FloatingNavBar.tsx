@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import "../../App.css"
+// import "../../App.css"
 import { useRecoilState , useRecoilValue } from "recoil";
 import Avatar from '@mui/material/Avatar';
 import { LogInPop } from "store";

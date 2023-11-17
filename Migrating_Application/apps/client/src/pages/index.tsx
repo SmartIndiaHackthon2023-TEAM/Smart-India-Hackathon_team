@@ -10,29 +10,36 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { Avatar, Container, ListItemAvatar } from "@mui/material";
 import { useEffect } from "react";
-import { FloatingNavBar } from "./NavBars/FloatingNavBar";
-import { CuMarq } from "./Custom_marquee";
 import { useState } from "react"
-import { SignInPop } from "./SignInPopup";
-import { SignUpPop } from "./SignUpPopup";
+
+import { SignInPop } from '@/components/SignInPopup';
+import { SignUpPop } from '@/components/SignUpPopup';
+
 import axios from "axios";
 import { useRecoilState } from "recoil";
-import { StaticNavBar } from "./NavBars/StaticNavBar";
 
-// Packages prom store
+// import { CuMarq } from "./Custom_marquee";
+import { CuMarq } from '@/components/Custom_Marquee';
+
+// import { FloatingNavBar } from "./NavBars/FloatingNavBar";
+// import { StaticNavBar } from "./NavBars/StaticNavBar";
+import { FloatingNavBar } from '@/components/NavBars/FloatingNavBar';
+import { StaticNavBar } from '@/components/NavBars/StaticNavBar';
+
+// Packages from store
 
 import { LogInPop } from "store";
 import { lodge } from "store";
 // import { LogInPop } from "../store/atoms/LogInPop"
 // import { lodge } from "../store/atoms/signUpPop";
 
-export function LandingPage()
+export default function LandingPage()
 {
     const [popup , setPopup] = useRecoilState(LogInPop)
     const [signuppopup , setSignUpPopup] = useRecoilState(lodge)
 
     useEffect(() => {
-        if (signuppopup==false) {
+        if (signuppopup.Spopup == false) {
             document.body.classList.add('active-Popup');
         } else {
             document.body.classList.remove('active-Popup');
@@ -49,7 +56,7 @@ export function LandingPage()
     } ,[])
 
     useEffect(() => {
-        if (popup==false) {
+        if (popup.Lpopup == false) {
             document.body.classList.add('active-Popup');
         } else {
             document.body.classList.remove('active-Popup');

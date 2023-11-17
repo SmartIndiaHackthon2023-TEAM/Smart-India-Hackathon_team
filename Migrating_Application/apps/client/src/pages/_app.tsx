@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </RecoilRoot> 
 }
 
-export function App2({Component , pageProps}:{Component : any , pageProps : any})
+function App2({Component , pageProps}:{Component : any , pageProps : any})
 {
   <ActiveUser/>
   return <div>
