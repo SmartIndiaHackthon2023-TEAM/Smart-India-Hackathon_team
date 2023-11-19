@@ -34,7 +34,7 @@ export function SignUpPop()
                             <h2>Welcome!</h2>
                             <div>
                                 <h1>Team.</h1>
-                                <img src="src\assets\smile.png" alt=""/>
+                                <img src="/smile.png" alt=""/>
                             </div>
                                 <aside>
                                 <p>Already a member?</p>

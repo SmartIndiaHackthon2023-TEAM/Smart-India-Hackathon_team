@@ -56,7 +56,7 @@ export function StaticNavBar()
                         </p>
                     </div>
                     <p className="navbarLinks"><a href="https://sih.gov.in/sih2023PS" target="_blank">SIH</a></p>
-                    <Avatar alt="Remy Sharp" src="src\assets\avatar.jpg" style={{marginRight : "2vh" , marginTop : "1.5vh" , borderRadius : "30px" , border : "2px solid grey"}}/>
+                    <Avatar alt="Remy Sharp" src="/avatar.jpg" style={{marginRight : "2vh" , marginTop : "1.5vh" , borderRadius : "30px" , border : "2px solid grey"}}/>
                     <Button variant="contained" id="LPSignIn" onClick={() =>
                     {
                         localStorage.setItem("token" , String(null));

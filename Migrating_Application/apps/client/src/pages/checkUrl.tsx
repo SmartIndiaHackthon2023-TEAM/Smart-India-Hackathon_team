@@ -106,7 +106,7 @@ export default function CheckUrl()
                         </div>
                             <div className="blackInRed">
                                 <p>
-                                Made with <img src="src\assets\heart.png" alt="" className="love" /> by TEAM
+                                Made with <img src="/heart.png" alt=":)" className="love" /> by TEAM
                                 </p>
                             </div>
                     
