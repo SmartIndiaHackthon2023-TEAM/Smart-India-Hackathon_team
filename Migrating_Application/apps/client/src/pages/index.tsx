@@ -166,7 +166,7 @@ export default function LandingPage()
                         </li>
                         <li>
                             <p>Our algorithms assess backend codes, content similarities, and even image patterns on websites to distinguish between genuine and malicious sites.</p>
-                        </li>
+                        </li>src
                         <li>
                             <p>Our tool is always alert, constantly updating its database to catch the latest phishing culprits.</p>
                         </li>
@@ -189,7 +189,7 @@ export default function LandingPage()
                     <div>
                     <h2>_TEAM's Security Consultant</h2>
                         <ListItemAvatar style={{marginLeft : "120px", position: "relative" , top : "-30px" , fontSize : "200px"}}>
-                    <Avatar src="src\assets\Harsh.jpg" style={{width : "80px" , height  : "80px"}}></Avatar>
+                    <Avatar src="/Harsh.jpg" style={{width : "80px" , height  : "80px"}}></Avatar>
                         </ListItemAvatar>
                     <h1>Harsh Patel</h1>
                     <p>I am the best Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, repellendus. Molestias sunt aliquid recusandae facilis laboriosam maxime, beatae ipsa dicta dolor amet.</p>
@@ -199,7 +199,7 @@ export default function LandingPage()
                     <div>
                     <h2>_TEAM's Data Scientist</h2>
                         <ListItemAvatar style={{marginLeft : "120px", position: "relative" , top : "-30px" , fontSize : "200px"}}>
-                            <Avatar src="src\assets\Shivansh.jpg" style={{width : "80px" , height  : "80px"}}></Avatar>
+                            <Avatar src="/Shivansh.jpg" style={{width : "80px" , height  : "80px"}}></Avatar>
                         </ListItemAvatar>
                         <h1>Shivansh Mahajan</h1>
                         <p>I am the best Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, repellendus. Molestias sunt aliquid recusandae facilis laboriosam maxime, beatae ipsa dicta dolor amet.</p>
@@ -209,7 +209,7 @@ export default function LandingPage()
                     <div>
                     <h2>_TEAM's Data Scientist</h2>
                         <ListItemAvatar style={{marginLeft : "120px", position: "relative" , top : "-30px" , fontSize : "200px"}}>
-                            <Avatar src="src\assets\Snehal.jpg" style={{width : "80px" , height  : "80px"}}></Avatar>
+                            <Avatar src="/Snehal.jpg" style={{width : "80px" , height  : "80px"}}></Avatar>
                         </ListItemAvatar>
                         <h1>Snehal Saurabh</h1>
                         <p>I am the best Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, repellendus. Molestias sunt aliquid recusandae facilis laboriosam maxime, beatae ipsa dicta dolor amet.</p>
@@ -219,7 +219,7 @@ export default function LandingPage()
                     <div>
                     <h2>_TEAM's DEVELOPER</h2>
                         <ListItemAvatar style={{marginLeft : "120px", position: "relative" , top : "-30px" , fontSize : "200px"}}>
-                            <Avatar src="src\assets\Vibhor.jpg" style={{width : "80px" , height  : "80px"}}></Avatar>
+                            <Avatar src="/Vibhor.jpg" style={{width : "80px" , height  : "80px"}}></Avatar>
                         </ListItemAvatar>
                         <h1>Vibhor Phalke</h1>
                         <p>I am the best Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, repellendus. Molestias sunt aliquid recusandae facilis laboriosam maxime, beatae ipsa dicta dolor amet.</p>
@@ -229,7 +229,7 @@ export default function LandingPage()
                     <div>
                     <h2>_TEAM's DEVELOPER</h2>
                         <ListItemAvatar style={{marginLeft : "120px", position: "relative" , top : "-30px" , fontSize : "200px"}}>
-                            <Avatar src="src\assets\Shashwat.jpg" style={{width : "80px" , height  : "80px"}}></Avatar>
+                            <Avatar src="/Shashwat.jpg" style={{width : "80px" , height  : "80px"}}></Avatar>
                         </ListItemAvatar>
                         <h1>Shashwat Singh</h1>
                         <p>I am the best Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, repellendus. Molestias sunt aliquid recusandae facilis laboriosam maxime, beatae ipsa dicta dolor amet.</p>
@@ -239,7 +239,7 @@ export default function LandingPage()
                     <div>
                         <h2>_TEAM LEADER</h2>
                         <ListItemAvatar style={{marginLeft : "120px", position: "relative"}}>
-                            <Avatar src="src\assets\Samriddhi.jpg" style={{width : "80px" , height  : "80px"}}></Avatar>
+                            <Avatar src="/Samriddhi.jpg" style={{width : "80px" , height  : "80px"}}></Avatar>
                         </ListItemAvatar>
                         <h1>Samriddhi Tripathi</h1>
                         <p>I am the best Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, repellendus. Molestias sunt aliquid recusandae facilis laboriosam maxime, beatae ipsa dicta dolor amet.</p>

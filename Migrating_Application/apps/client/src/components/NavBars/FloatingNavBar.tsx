@@ -19,7 +19,7 @@ export function FloatingNavBar()
             <section className="FloatingNav">
                     <div className="button">
                     <Button style={{backgroundColor : "#222222" , height : "8vh" , width : "30vh" , marginLeft : "2vh" , marginTop : "1vh" , opacity : "1" , borderRadius : "12px" , color : "yellow"}}>
-                        <Avatar alt="Remy Sharp" src="src\assets\avatar.jpg" style={{marginRight : "2vh" , borderRadius : "30px" , border : "2px solid grey"}}/>
+                        <Avatar alt="Remy Sharp" src="/avatar.jpg" style={{marginRight : "2vh" , borderRadius : "30px" , border : "2px solid grey"}}/>
                         {/* <span style={{marginRight : "30px"}}>{username.split('@')[0]}</span> */}
                         <span>{userEmail.split('@')[0]}</span>
                     </Button>
