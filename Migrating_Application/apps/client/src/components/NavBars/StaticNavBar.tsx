@@ -91,7 +91,7 @@ export function StaticNavBar()
                     <p className="navbarLinks"><a href="https://sih.gov.in/sih2023PS" target="_blank">SIH</a></p>
                     <Button variant="contained" id="LPSignIn"onClick={() =>
                     {
-                        setPopup((currVal) => ({ ...currVal, Spopup: !currVal.Lpopup }));
+                        setPopup((currVal) => ({ ...currVal, Lpopup: !currVal.Lpopup }));
                     }}>LogIn</Button>
                     <Button variant="outlined" id="LPSignUp" onClick={() =>
                     {

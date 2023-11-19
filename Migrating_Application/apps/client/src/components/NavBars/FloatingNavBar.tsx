@@ -62,7 +62,7 @@ export function FloatingNavBar()
             <Button style={{backgroundColor : "#222222" , height : "8vh" , width : "20vh" , marginLeft : "18vh" , opacity : "1" , borderRadius : "12px" , color : "white"}} onClick={() =>
             {
                 // setPopup(!popup)
-                setPopup((currVal) => ({ ...currVal, Spopup: !currVal.Lpopup }));
+                setPopup((currVal) => ({ ...currVal, Lpopup: !currVal.Lpopup }));
 
             }}>LogIn</Button>
             </div>
