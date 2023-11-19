@@ -23,7 +23,8 @@
     "recoil": "^0.7.7",
     "store": "*",
     "typed.js": "^2.1.0",
-    "ui": "*"
+    "ui": "*",
+    "db" : "*"
   },
   "devDependencies": {
     "@types/aos": "^3.0.7",
