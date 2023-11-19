@@ -44,7 +44,6 @@ export function SignUpPop()
                                     setPopup((currVal) => ({ ...currVal, Lpopup: !currVal.Lpopup }));
                                     // setSignUpPopup(!signuppopup)
                                     setSignUpPopup((currVal) => ({ ...currVal, Spopup: !currVal.Spopup }));
-
                                 }}>Log In</span>
                                 </aside>
                         </div>
