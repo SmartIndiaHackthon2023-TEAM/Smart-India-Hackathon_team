@@ -26,7 +26,7 @@ export function SignInPop()
                 <div className="overlay" onClick={() =>
                 {
                     // setPopup(!popup)
-                    setPopup((currVal) => ({ ...currVal, Spopup: !currVal.Lpopup }));
+                    setPopup((currVal) => ({ ...currVal, Lpopup: !currVal.Lpopup }));
                 }}></div>
                     <div className="popUp-content1">
                         <div className="popUP-content-div1">
@@ -40,7 +40,7 @@ export function SignInPop()
                                 <span onClick={() =>
                                 {
                                     // setPopup(!popup)
-                                    setPopup((currVal) => ({ ...currVal, Spopup: !currVal.Lpopup }));
+                                    setPopup((currVal) => ({ ...currVal, Lpopup: !currVal.Lpopup }));
                                     // setSignUpPopup(!signuppopup)
                                     setSignUpPopup((currVal) => ({ ...currVal, Spopup: !currVal.Spopup }));
                                 }}>Register now</span>
@@ -124,7 +124,7 @@ export function SignInPop()
                                     console.error();
                                 }
                                 // setPopup(!popup)
-                                setPopup((currVal) => ({ ...currVal, Spopup: !currVal.Lpopup }));
+                                setPopup((currVal) => ({ ...currVal, Lpopup: !currVal.Lpopup }));
                             }}>Login</Button> 
                             </div>
                             <div className="OAuth">

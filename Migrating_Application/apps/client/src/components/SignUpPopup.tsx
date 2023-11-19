@@ -41,7 +41,7 @@ export function SignUpPop()
                                 <span onClick={() =>
                                 {
                                     // setPopup(!popup)
-                                    setPopup((currVal) => ({ ...currVal, Spopup: !currVal.Lpopup }));
+                                    setPopup((currVal) => ({ ...currVal, Lpopup: !currVal.Lpopup }));
                                     // setSignUpPopup(!signuppopup)
                                     setSignUpPopup((currVal) => ({ ...currVal, Spopup: !currVal.Spopup }));
 

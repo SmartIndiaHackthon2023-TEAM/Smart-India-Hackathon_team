@@ -4,6 +4,6 @@ export const lodge = atom<{Spopup : boolean}>
 ({
     key : "lodge" ,
     default : {
-        Spopup : false
+        Spopup : true
     } ,
 })
